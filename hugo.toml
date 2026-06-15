@@ -1,4 +1,5 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://1-Nekomi.github.io/'
+canonifyURLs = true
 languageCode = 'en'
 title = 'My New Hugo Site'
 theme = 'hugo-theme-reimu'
