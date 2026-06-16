@@ -1,4 +1,4 @@
-baseURL = 'https://1-Nekomi.github.io/'
+baseURL = 'https://1-Nekomi.github.io'
 canonifyURLs = true
 languageCode = 'en'
 title = 'Random Play'
