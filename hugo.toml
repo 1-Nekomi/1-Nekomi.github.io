@@ -1,7 +1,7 @@
 baseURL = 'https://1-Nekomi.github.io/'
 canonifyURLs = true
 languageCode = 'en'
-title = 'My New Hugo Site'
+title = 'Random Play'
 theme = 'hugo-theme-reimu'
 
 defaultContentLanguage = 'en'

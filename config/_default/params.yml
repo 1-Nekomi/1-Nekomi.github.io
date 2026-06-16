@@ -7,16 +7,16 @@
 menu:
   - name: home
     url: ""
-    icon: # default use taichi icon, you can use a hexadecimal representation of fontawesome or icon_font, like 'f0c1'
+    icon: "images/glass.png" # default use taichi icon, you can use a hexadecimal representation of fontawesome or icon_font, like 'f0c1'
   - name: archives
     url: "archives"
-    icon:
+    icon: "images/glass.png"
   - name: about
     url: "about"
-    icon:
+    icon: "images/glass.png"
   - name: friend
     url: "friend"
-    icon:
+    icon: "images/glass.png"
 
 mainSections: ["post"]
 # 年，月，日及时间的格式化样式
@@ -26,8 +26,8 @@ monthFormat: "2006-01"
 dateFormat: "2006-01-02"
 timeFormat: "2006-01-02 15:04:05"
 
-author: D-Sketon
-email: xxx@example.com
+author: 1-Nekomi
+email: typedefine111@163.com
 description: "少女祈祷中..."
 # subtitle: "少女祈祷中..."
 subtitle:
@@ -102,14 +102,14 @@ copyright:
 #   All website licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></div>
 
 footer:
-  since: 2020 # 2020-current year
+  since: 2026 # 2020-current year
   powered: true
   count: true
   busuanzi: true
   icon:
-    url: "../images/taichi.png" # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
-    rotate: true
-    mask: true # whether to use the images as a mask
+    url: "../images/glass-fill.png" # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
+    rotate: false
+    mask: false # whether to use the images as a mask
 
 # Sidebar
 # sidebar: right # deprecated, use sidebar.position instead
@@ -206,18 +206,18 @@ layout:
   max_width: 1350px # the max width of the main content area
 
 triangle_badge:
-  enable: false
+  enable: true
   icon: github # same as the icon in the social config
-  link: https://github.com/D-Sketon/hugo-theme-reimu
+  link: https://github.com/1-Nekomi/1-Nekomi.github.io
 
 anchor_icon: # default use '#' icon, you can use a hexadecimal representation of fontawesome or icon_font, like 'f0c1', you can also use false to hide anchor icon
 
 reimu_cursor:
   enable: true
   cursor:
-    default: ../images/cursor/reimu-cursor-default.png  # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
-    pointer: ../images/cursor/reimu-cursor-pointer.png
-    text: ../images/cursor/reimu-cursor-text.png
+    default: ../images/cursor/cursor-default.png  # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
+    pointer: ../images/cursor/cursor-pointer.png
+    text: ../images/cursor/cursor-text.png
 
 icon_font: 4552607_ex15nbittbh
 
@@ -497,8 +497,8 @@ preloader:
     en: Loading...
     ja: 少女祈祷中...
     pt-BR: Carregando...
-  icon: # default use inline svg for fast speed, you can use a image url, like '/images/taichi.png'
-  rotate: true # whether to rotate the icon
+  icon: "images/loading.png" # default use inline svg for fast speed, you can use a image url, like '/images/taichi.png'
+  rotate: false # whether to rotate the icon
 
 # see https://github.com/D-Sketon/aos.js
 animation:
@@ -574,9 +574,9 @@ top:
   enable: true
   position: right # left or right
   icon:
-    url: "../images/taichi.png" # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
+    url: "../images/glass-fill.png" # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
     rotate: true
-    mask: true # whether to use the images as a mask
+    mask: false # whether to use the images as a mask
 
 # whether to display the notification when the article is outdated
 outdate:
@@ -609,7 +609,7 @@ sponsor:
     ja: コーヒーを買ってください
     pt-BR: Compre-me um café
   icon:
-    url: "../images/taichi.png" # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
+    url: "../images/glass.png" # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
     rotate: true
     mask: true # whether to use the images as a mask
   qr:
@@ -740,16 +740,16 @@ material_theme:
 
 internal_theme:
   light:
-    --red-0: '#ff0000'
-    --red-1: '#ff5252'
-    --red-2: '#ff7c7c'
-    --red-3: '#ffafaf'
-    --red-4: '#ffd0d0'
-    --red-5: '#ffecec'
-    --red-5-5: '#fff3f3'
-    --red-6: '#fff7f7'
-    --color-red-6-shadow: 'rgba(255, 78, 78, 0.6)'
-    --color-red-3-shadow: 'rgba(255, 78, 78, 0.3)'
+    --red-0: '#2f6b3c'               # 深森林绿，强调色，替代原纯红
+    --red-1: '#508d5a'               # 中等翡翠绿
+    --red-2: '#6fa87b'               # 柔和的鼠尾草绿
+    --red-3: '#93c19e'               # 浅绿，渐淡
+    --red-4: '#b8d8be'               # 极浅绿，用于背景块
+    --red-5: '#d9ecdd'               # 接近白色的微绿
+    --red-5-5: '#eaf5ec'             # 更淡的绿底
+    --red-6: '#f3faf5'               # 几乎纯白带一丝绿意
+    --color-red-6-shadow: 'rgba(47, 107, 60, 0.6)'    # 基于 --red-0
+    --color-red-3-shadow: 'rgba(47, 107, 60, 0.3)'
 
     --highlight-nav: "#f5f5f5"
     --highlight-scrollbar: "#d6d6d6"
@@ -769,10 +769,10 @@ internal_theme:
     --highlight-addition: "#22863a"
     --highlight-addition-bg: "#f0fff4"
   dark:
-    --red-4: 'rgba(255, 208, 208, 0.5)'
-    --red-5: 'rgba(255,228,228,0.15)'
-    --red-5-5: 'rgba(255,236,236,0.05)'
-    --red-6: 'rgba(255, 243, 243, 0.2)'
+    --red-4: 'rgba(184, 216, 190, 0.5)'   # 半透明浅绿
+    --red-5: 'rgba(217, 236, 221, 0.15)'
+    --red-5-5: 'rgba(234, 245, 236, 0.05)'
+    --red-6: 'rgba(243, 250, 245, 0.2)'
 
     --highlight-nav: "#222830"
     --highlight-scrollbar: "#454d59"
@@ -791,3 +791,59 @@ internal_theme:
     --highlight-deletion-bg: "#490202"
     --highlight-addition: "#7ee787"
     --highlight-addition-bg: "#04260f"
+
+# original theme colors
+
+# internal_theme:
+#   light:
+#     --red-0: '#ff0000'
+#     --red-1: '#ff5252'
+#     --red-2: '#ff7c7c'
+#     --red-3: '#ffafaf'
+#     --red-4: '#ffd0d0'
+#     --red-5: '#ffecec'
+#     --red-5-5: '#fff3f3'
+#     --red-6: '#fff7f7'
+#     --color-red-6-shadow: 'rgba(255, 78, 78, 0.6)'
+#     --color-red-3-shadow: 'rgba(255, 78, 78, 0.3)'
+
+#     --highlight-nav: "#f5f5f5"
+#     --highlight-scrollbar: "#d6d6d6"
+#     --highlight-background: "#fdfdfd"
+#     --highlight-selection: "#e9e9e988"
+#     --highlight-foreground: "#24292e"
+#     --highlight-comment: "#7d7d7d"
+#     --highlight-red: "#d73a49"
+#     --highlight-orange: "#e36209"
+#     --highlight-yellow: "#cb911d"
+#     --highlight-green: "#22863a"
+#     --highlight-aqua: "#005cc5"
+#     --highlight-blue: "#032f62"
+#     --highlight-purple: "#6f42c1"
+#     --highlight-deletion: "#b31d28"
+#     --highlight-deletion-bg: "#ffeef0"
+#     --highlight-addition: "#22863a"
+#     --highlight-addition-bg: "#f0fff4"
+#   dark:
+#     --red-4: 'rgba(255, 208, 208, 0.5)'
+#     --red-5: 'rgba(255,228,228,0.15)'
+#     --red-5-5: 'rgba(255,236,236,0.05)'
+#     --red-6: 'rgba(255, 243, 243, 0.2)'
+
+#     --highlight-nav: "#222830"
+#     --highlight-scrollbar: "#454d59"
+#     --highlight-background: "#1e2027"
+#     --highlight-selection: "#51515155"
+#     --highlight-foreground: "#c9d1d9"
+#     --highlight-comment: "#8b949e"
+#     --highlight-red: "#ff7b72"
+#     --highlight-orange: "#ffa657"
+#     --highlight-yellow: "#ffcc66"
+#     --highlight-green: "#7ee787"
+#     --highlight-aqua: "#a5d6ff"
+#     --highlight-blue: "#79c0ff"
+#     --highlight-purple: "#d2a8ff"
+#     --highlight-deletion: "#ffa198"
+#     --highlight-deletion-bg: "#490202"
+#     --highlight-addition: "#7ee787"
+#     --highlight-addition-bg: "#04260f"
