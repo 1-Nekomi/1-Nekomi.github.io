@@ -138,7 +138,7 @@
 
         selectOptions.forEach((item) => {
           item.addEventListener("click", () => {
-            const langMap = {};langMap['en'] = '\/tags\/';langMap['ja'] = '\/ja\/tags\/';langMap['zh-tw'] = '\/zh-tw\/tags\/';selectedLang.textContent = item.textContent;
+            const langMap = {};langMap['en'] = '\/tags\/';langMap['zh-tw'] = '\/zh-tw\/tags\/';langMap['ja'] = '\/ja\/tags\/';selectedLang.textContent = item.textContent;
             selectItems.classList.remove("show");
             selectOptions.forEach((option) => {
               option.classList.remove("selected");
