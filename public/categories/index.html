@@ -138,7 +138,7 @@ This article does not have a corresponding language version
 
         selectOptions.forEach((item) => {
           item.addEventListener("click", () => {
-            const langMap = {};langMap['zh-cn'] = '\/zh-cn\/categories\/';langMap['zh-tw'] = '\/zh-tw\/categories\/';langMap['ja'] = '\/ja\/categories\/';selectedLang.textContent = item.textContent;
+            const langMap = {};langMap['ja'] = '\/ja\/categories\/';langMap['zh-cn'] = '\/zh-cn\/categories\/';langMap['zh-tw'] = '\/zh-tw\/categories\/';selectedLang.textContent = item.textContent;
             selectItems.classList.remove("show");
             selectOptions.forEach((option) => {
               option.classList.remove("selected");
