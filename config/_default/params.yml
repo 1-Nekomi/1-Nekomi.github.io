@@ -93,7 +93,15 @@ excerpt_link: Read More
 # Footer copyright
 # Inject code snippet right in the footer copyright
 # Make sure your code snippet is safeHTML
-copyright:
+copyright: |-
+  <div style="display: flex; align-items: center; justify-content: center; gap: 0.3em; flex-wrap: wrap;">
+    本博客所有文章除特别声明外，均采用
+    <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" style="display: inline-flex; align-items: center;">
+      <img alt="知识共享许可协议" style="border-width:0; height: 1.2em; margin-right: 0.15em;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+      BY-NC-SA 4.0
+    </a>
+    许可协议。转载请注明出处！
+  </div>
 # Need help choosing? Please see...
 # https://creativecommons.org/choose/
 # https://choosealicense.com/
@@ -102,7 +110,7 @@ copyright:
 #   All website licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></div>
 
 footer:
-  since: 2026 # 2020-current year
+  since: 2024 # 2020-current year
   powered: true
   count: true
   busuanzi: true
@@ -188,10 +196,10 @@ rss:
 # weight-reverse: sorted by weight in descending order
 sort_order:
   taxonomy:
-    category: date-reverse # controlled by categories_weight
-    tag: date-reverse # controlled by tags_weight
-  archive: date-reverse # controlled by weight
-  home: default # controlled by weight
+    category: weight # controlled by categories_weight
+    tag: weight # controlled by tags_weight
+  archive: weight # controlled by weight
+  home: weight # controlled by weight
 
 # Pagination
 paginate:
@@ -301,7 +309,7 @@ clipboard:
     ja: コピー失敗 (ﾟ⊿ﾟ)ﾂ
     pt-BR: Falha ao copiar (ﾟ⊿ﾟ)ﾂ
   copyright:
-    enable: false
+    enable: true
     count: 50 # The number of characters when the copyright is displayed
     license_type: by-nc-sa # https://creativecommons.org/licenses
 
@@ -559,12 +567,12 @@ firework:
 
 # show the copyright below each article
 article_copyright:
-  enable: false
+  enable: true
   content:
     author: true
-    link: true
+    link: false
     title: false
-    date: false
+    date: true
     updated: false
     license: true
     license_type: by-nc-sa # https://creativecommons.org/licenses
@@ -580,7 +588,7 @@ top:
 
 # whether to display the notification when the article is outdated
 outdate:
-  enable: false
+  enable: true
   daysAgo: 180 # The number of days after which the article is considered outdated
   message:
     en: This article was last updated on {time}. Please note that the content may no longer be applicable.
@@ -631,9 +639,9 @@ share:
 
 # show categories card on home page
 home_categories:
-  enable: false
+  enable: true
   content:
-    - categories: # string (single-layer category) or array (multi-layer category)
+    - categories: C语言 # string (single-layer category) or array (multi-layer category)
       cover: # empty means random cover
     - categories:
       cover:
