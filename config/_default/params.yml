@@ -199,7 +199,7 @@ sort_order:
     category: weight # controlled by categories_weight
     tag: weight # controlled by tags_weight
   archive: weight # controlled by weight
-  home: weight # controlled by weight
+  home: date-reverse # controlled by weight
 
 # Pagination
 paginate:
@@ -643,6 +643,12 @@ home_categories:
   content:
     - categories: C语言 # string (single-layer category) or array (multi-layer category)
       cover: # empty means random cover
+    - categories: C++
+      cover:
+    - categories: Python
+      cover:
+    - categories: 杂谈
+      cover:
     - categories:
       cover:
 
