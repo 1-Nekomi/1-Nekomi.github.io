@@ -28,12 +28,19 @@ timeFormat: "2006-01-02 15:04:05"
 
 author: 1-Nekomi
 email: typedefine111@163.com
-description: "少女祈祷中..."
+description: "积极摆烂中..."
 # subtitle: "少女祈祷中..."
 subtitle:
   typing:
-    enable: false
+    enable: true
     strings:
+        - "少女祈祷中..."
+        - "404 Not Found"
+        - "别学啦，玩会吧"
+        - "你想要的这里都没有"
+        - "努力学习如何高效摆烂ing..."
+        - "喵喵喵喵喵???"
+        - "喵喵喵喵喵!!!"
       # - Sentence 1
       # - Sentence 2
       # - Sentence 3
@@ -46,7 +53,7 @@ subtitle:
     shuffle: true              # 是否随机输出句子
     showCursor: true            # 是否显示闪烁的字符
     cursorChar: "|"             # 字符
-    smartBackspace: false       # 智能退格，只删除不同的部分
+    smartBackspace: true        # 智能退格，只删除不同的部分
   text: "少女祈祷中..."        # 当 typing.enable = false 时使用
 
 banner: "images/banner.webp"
@@ -57,9 +64,9 @@ banner: "images/banner.webp"
 banner_srcset:
   enable: false
   srcset:
-    - src: "images/banner-600w.webp"
+    - src: "images/banner.webp"
       media: "(max-width: 479px)"
-    - src: "images/banner-800w.webp"
+    - src: "images/banner.webp"
       media: "(max-width: 799px)"
     - src: "images/banner.webp"
       media: "(min-width: 800px)"
