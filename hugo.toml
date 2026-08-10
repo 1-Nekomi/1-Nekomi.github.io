@@ -32,7 +32,10 @@ guessSyntax = true
 noClasses = false
 
 [outputs]
-home = ["Algolia", "HTML", "RSS"]
+home = ["Algolia", "HTML"]
+section = ["HTML"]
+taxonomy = ["HTML"]
+term = ["HTML"]
 
 [outputFormats.Algolia]
 baseName = "algolia"
