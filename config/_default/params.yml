@@ -516,6 +516,10 @@ preloader:
   rotate: false # whether to rotate the icon
 
 # see https://github.com/D-Sketon/aos.js
+# Fade: fade, fade-up, fade-down, fade-left, fade-right, fade-up-right, fade-up-left, fade-down-right, fade-down-left
+# Flip: flip-up, flip-down, flip-left, flip-right
+# Slide: slide-up, slide-down, slide-left, slide-right
+# Zoom: zoom-in, zoom-in-up, zoom-in-down, zoom-in-left, zoom-in-right, zoom-out, zoom-out-up, zoom-out-down, zoom-out-left, zoom-out-right
 animation:
   enable: true
   options:
@@ -523,12 +527,12 @@ animation:
       title: slide-up
       subTitle: slide-down
     home:
-      post: fade-up
-      widget: fade-up
-      sidebar: fade-up
+      post: flip-up
+      widget: slide-left
+      sidebar: zoom-out-left
     article:
-      whole: fade-up
-      date: zoom-in
+      whole: fade-left
+      date: zoom-in-up
       category: zoom-in
       tag: zoom-in
       comment: zoom-in
@@ -675,7 +679,7 @@ injector:
 
 # Experimental, may have a lot of bugs, open with caution!
 pjax:
-  enable: false
+  enable: true
 
 # Experimental
 # https://github.com/GoogleChromeLabs/quicklink
