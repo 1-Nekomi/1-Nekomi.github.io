@@ -18,6 +18,10 @@ menu:
     url: "friend"
     icon:
 
+# friend links
+friends:
+  shuffle: false  # whether to shuffle the friend links
+
 mainSections: ["post"]
 # 年，月，日及时间的格式化样式
 # Format style for year,month,date & time
@@ -258,10 +262,13 @@ local_font:
     - monospace
 
 dark_mode:
+  # true means that the dark mode toggle button is shown
+  # false means that the dark mode toggle button is hidden
+  button: true # true | false
   # true means that the dark mode is enabled by default
   # false means that the dark mode is disabled by default
   # auto means that the dark mode is automatically switched according to the system settings
-  enable: auto # true | false | auto
+  type: auto # true | false | auto
 
 ########################################
 # Analytics

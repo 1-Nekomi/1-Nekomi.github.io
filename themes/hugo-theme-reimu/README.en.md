@@ -6,7 +6,6 @@
   <img alt="GitHub License" src="https://img.shields.io/github/license/D-Sketon/hugo-theme-reimu">
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/D-Sketon/hugo-theme-reimu">
   <p align="center">
-  <p align="center">
   💘 Hakurei Reimu 💘
   </p>
 
@@ -27,7 +26,7 @@ A Hakurei Reimu style Hugo theme. Migrated from [hexo-theme-reimu](https://githu
 | [Hugo](https://gohugo.io)    | [hugo-theme-reimu](https://github.com/D-Sketon/hugo-theme-reimu)   | <img alt="version" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FD-Sketon%2Fhugo-theme-reimu%2Fraw%2Fmain%2Fpackage.json&query=%24.version&label=version">  | <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/D-Sketon/hugo-theme-reimu">  |
 | [Astro](https://astro.build) | [astro-theme-reimu](https://github.com/D-Sketon/astro-theme-reimu) | <img alt="version" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FD-Sketon%2Fastro-theme-reimu%2Fraw%2Fmain%2Fpackage.json&query=%24.version&label=version"> | <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/D-Sketon/astro-theme-reimu"> |
 
-**ISSUE and PR Welcome!**
+**Issues and PRs Welcome!**
 
 ## Features
 
@@ -66,7 +65,7 @@ A Hakurei Reimu style Hugo theme. Migrated from [hexo-theme-reimu](https://githu
 ### Media & Interactive Features
 
 - 🎵 Music player support:
-  - Aplayer
+  - APlayer
   - Meting
 - 🖼️ Lazy loading for images
 - ⚡ Loading animations
@@ -79,14 +78,14 @@ A Hakurei Reimu style Hugo theme. Migrated from [hexo-theme-reimu](https://githu
 
 - 📑 Table of Contents
 - 🔄 PJAX support
-- 🔧 ServiceWorker implementation
+- 🔧 Service Worker implementation
 - 📰 RSS feed
 
 ### Design & Customization
 
 - 🎨 Icon support:
   - Iconfont
-  - FontAwesome7
+  - Font Awesome
 - 🔗 Built-in shortcodes:
   - Internal links
   - External links
@@ -96,6 +95,9 @@ A Hakurei Reimu style Hugo theme. Migrated from [hexo-theme-reimu](https://githu
   - Alert Blockquote
   - Tabs
   - Gallery
+  - Grid Layout
+  - Foldable Panel
+  - Spoiler
 - 🎨 Dynamic theme color adaptation
 - ©️ Article copyright declaration
 - 🌐 Custom CDN source / local source configuration
@@ -211,8 +213,8 @@ For random cover images, refer to the file structure in the theme's `data/covers
 
 `banner` and `cover` behave as follows:
 
-- Article header image prefers Front matter `banner`; if `banner` is not set, it falls back to `cover` for backward compatibility
-- List card cover prefers Front matter `cover` (URL only); when `cover` is unset, `false`, or `rgb(...)`, it falls back to random images from `data/covers.yml`
+- Article header image prefers front matter `banner`; if `banner` is not set, it falls back to `cover` for backward compatibility
+- List card cover prefers front matter `cover` (URL only); when `cover` is unset, `false`, or `rgb(...)`, it falls back to random images from `data/covers.yml`
 - If random covers are unavailable, it falls back to the global `banner`
 
 Recommended (separate header and card images):
@@ -244,7 +246,7 @@ banner: "images/banner.webp"
 
 #### Favicon
 
-The Favicon is saved at `themes/hugo-theme-reimu/static/favicon.ico`. You can replace it with your own file.
+The Favicon is saved at `themes/hugo-theme-reimu/static/favicon.ico`. You can replace it with your own file. Updates may be affected by Hugo and browser caching. Clear Hugo cache (`hugo --cleanDestinationDir`) and browser cache, then hard refresh to confirm changes.
 
 #### Article Summary
 
@@ -276,7 +278,7 @@ sidebar:
     show_common: true # whether to show common sidebar on article pages, ignored on mobile devices
 ```
 
-Additionally, you can control it through the article's front-matter, which takes precedence over the global configuration.
+Additionally, you can control it through the article's front matter, which takes precedence over the global configuration.
 
 ```yaml
 ---
@@ -284,7 +286,7 @@ sidebar: left # left | right | false
 ---
 ```
 
-> When sidebar is set to false, the sidebar will be hidden, and the aplayer player and widgets will not be displayed at the same time.
+> When sidebar is set to false, the sidebar will be hidden, and the APlayer player and widgets will not be displayed at the same time.
 
 #### TOC
 
@@ -294,7 +296,7 @@ Default enabled. You can modify it in `params.yml`.
 toc: true # true | false
 ```
 
-Additionally, you can control it through the article's front-matter, which takes precedence over the global configuration.
+Additionally, you can control it through the article's front matter, which takes precedence over the global configuration.
 
 ```yaml
 ---
@@ -434,7 +436,7 @@ code_block:
 
 ### Site comments
 
-> Site comments can be individually controlled for each article using `comments` in the Front matter.  
+> Site comments can be individually controlled for each article using `comments` in the front matter.  
 > When `comments` is `false`, comments won't be displayed. When it's `true` or not specified, the display will be determined by the `params.yml` configuration.
 
 > Support for multiple comment systems simultaneously after version 0.8.0+
@@ -545,7 +547,7 @@ gitalk:
   repo: "your repo"
   owner: "repo owner"
   admin: "repo owner and collaborators"
-  md5: false # Whether to use md5 to encrypt the path
+  md5: false # Whether to use MD5 to encrypt the path
 ```
 
 If using [Disqus](https://disqus.com/)  
@@ -570,7 +572,7 @@ utterances:
 ```
 
 If using [beaudar](https://beaudar.lipk.org/)  
-Please set `beaudar.enable` to `true` in your theme's `_config.yml` and fill in your own `repo` and `branch`. Then create the [domain whitelist](https://github.com/beaudar/beaudar/blob/master/beaudar.json) in your repository (for Hexo themes, please place this file directly in the `source` directory) and [authorize the installation](https://github.com/apps/beaudar)
+Set `beaudar.enable` to `true` in `params.yml` and fill in your own `repo` and `branch`. Then create the [domain whitelist](https://github.com/beaudar/beaudar/blob/master/beaudar.json) in your repository (for Hexo themes, please place this file directly in the `source` directory) and [authorize the installation](https://github.com/apps/beaudar)
 ```yml
 beaudar:
   enable: true
@@ -628,7 +630,7 @@ delimiters.block = [["\\[", "\\]"], ["$$", "$$"]]
 delimiters.inline = [["\\(", "\\)"], ["$", "$"]]
 ```
 
-Then, add `math: true` to the Front matter of any article where you want to use mathematical formulas:
+Then, add `math: true` to the front matter of any article where you want to use mathematical formulas:
 
 ```yaml
 ---
@@ -665,7 +667,7 @@ math:
 
 ### Mermaid
 
-Flow charts are based on [Mermaid](https://mermaid.js.org/#/). Add `mermaid: true` to the Front matter of articles where you want to use flow charts:
+Flow charts are based on [Mermaid](https://mermaid.js.org/#/). Add `mermaid: true` to the front matter of articles where you want to use flow charts:
 
 ```yaml
 ---
@@ -708,7 +710,7 @@ Icons default to using the Iconfont provided by this project:
 icon_font: 4552607_a0oqhord1y
 ```
 
-If you want to continue using FontAwesome icons, set `icon_font` to `false`. This will use the corresponding FontAwesome configuration from `vendor.yml`:
+If you want to continue using Font Awesome icons, set `icon_font` to `false`. This will use the corresponding Font Awesome configuration from `vendor.yml`:
 
 ```yml
 fontawesome:
@@ -749,11 +751,16 @@ The default setting is `auto`, which automatically switches based on the user's 
 
 ```yaml
 dark_mode:
+  # true means the toggle button is shown
+  # false means the toggle button is hidden
+  button: true # true | false
   # true means that the dark mode is enabled by default
   # false means that the dark mode is disabled by default
   # auto means that the dark mode is automatically switched according to the system settings
-  enable: auto # true | false | auto
+  type: auto # true | false | auto
 ```
+
+The legacy format `dark_mode: {enable: true|false|auto}` is still supported.
 
 #### Analytics
 
@@ -798,7 +805,7 @@ pjax:
 
 > PJAX is for users who need SPA features like music players. However, it's still experimental and may cause issues like **scripts not executing**, **scripts executing multiple times**, or **page rendering problems**. Please consider carefully!
 
-#### ServiceWorker
+#### Service Worker
 
 Disabled by default
 
@@ -841,16 +848,16 @@ Disabled by default. When enabled and provided with corresponding image sizes an
 
 ```yml
 banner_srcset:
-enable: false
-srcset:
-  - src: "images/banner-600w.webp"
-    media: "(max-width: 479px)"
-  - src: "images/banner-800w.webp"
-    media: "(max-width: 799px)"
-  - src: 
-    - "/images/banner.avif"
-    - "/images/banner.webp" # support array format
-    media: "(min-width: 800px)"
+  enable: false
+  srcset:
+    - src: "images/banner-600w.webp"
+      media: "(max-width: 479px)"
+    - src: "images/banner-800w.webp"
+      media: "(max-width: 799px)"
+    - src: 
+        - "/images/banner.avif"
+        - "/images/banner.webp" # support array format
+      media: "(min-width: 800px)"
 ```
 
 #### Article Copyright Notice
@@ -870,7 +877,7 @@ article_copyright:
     license_type: by-nc-sa # https://creativecommons.org/licenses
 ```
 
-Additionally, it can be controlled through article front-matter, which takes priority over global configuration
+Additionally, it can be controlled through article front matter, which takes priority over global configuration
 
 ```yaml
 ---
@@ -965,7 +972,7 @@ sponsor:
       src: "sponsor/alipay.jpg" # Example QR code path at static/sponsor/alipay.jpg
 ```
 
-Can also be controlled through article front-matter, which takes priority over global configuration
+Can also be controlled through article front matter, which takes priority over global configuration
 
 ```yaml
 ---
@@ -977,7 +984,7 @@ sponsor: true # Show sponsorship QR codes?
 
 > Recommended to enable PJAX first, otherwise the player may automatically pause
 
-Uses Aplayer + Meting (optional), disabled by default
+Uses APlayer + Meting (optional), disabled by default
 
 ##### Music Player Position (v0.12.1+)
 
@@ -988,9 +995,9 @@ player:
   position: before_sidebar # before_sidebar / after_sidebar / after_widget
 ```
 
-##### Pure Aplayer
+##### Pure APlayer
 
-Set `player.aplayer.enable` to `true` and configure `player.aplayer.options` according to [Aplayer Docs](https://aplayer.js.org/#/home?id=options)
+Set `player.aplayer.enable` to `true` and configure `player.aplayer.options` according to [APlayer Docs](https://aplayer.js.org/#/home?id=options)
 
 ```yaml
 player:
@@ -1009,9 +1016,9 @@ player:
       lrcType:
 ```
 
-##### Aplayer + Meting
+##### APlayer + Meting
 
-Set both `player.aplayer.enable` and `player.meting.enable` to `true`. Configure `player.meting.options` according to [Meting Docs](https://github.com/metowolf/MetingJS?tab=readme-ov-file#option) and `player.aplayer.options` for Aplayer configuration
+Set both `player.aplayer.enable` and `player.meting.enable` to `true`. Configure `player.meting.options` according to [Meting Docs](https://github.com/metowolf/MetingJS?tab=readme-ov-file#option) and `player.aplayer.options` for APlayer configuration
 
 ```yaml
 player:
@@ -1106,9 +1113,22 @@ triangle_badge:
 
 ```markdown
 {{< friendsLink >}}
+{{< friendsLink compact >}}
+{{< friendsLink detailed >}}
 ```
 
-No parameters, directly reads from the `data/friends.yml` file
+The first parameter `style` (optional) controls the display style: `standard` (default), `compact`, or `detailed`. Directly reads from the `data/friends.yml` file. Use `friends.shuffle` in `params.yml` to randomize the order.
+
+Friend link data format (`data/friends.yml`):
+
+```yaml
+- name: D-Sketon
+  url: https://d-sketon.top/
+  desc: A brief description
+  image: https://d-sketon.top/img/icon.png
+  badge: Friend # optional, colored badge on the card
+  remark: Met via GitHub # optional, extra note below desc
+```
 
 #### postLinkCard - Internal Link Card (Not recommended, use Link Card instead)
 
@@ -1237,6 +1257,16 @@ Create a foldable panel in the article.
 
 - summary: Optional parameter, set the title of the foldable panel
 
+#### spoiler (v0.16.1+)
+
+```markdown
+{{< spoiler >}}
+Hidden content
+{{< /spoiler >}}
+```
+
+Hide content behind a mask, reveal on hover or click.
+
 </details>
 
 <details>
@@ -1357,7 +1387,7 @@ custom_font:
   enable: true
   article:
     - css: https://fontsapi.zeoseven.com/292/main/result.css # font css
-      name: LXGW WenKai # font css
+      name: LXGW WenKai # font name
   code:
 ```
 
@@ -1365,7 +1395,7 @@ custom_font:
 
 ##### Header / Sidebar Icons
 
-The `menu` configuration structure changed in v0.1.0, allowing users to customize icons. When icon is empty, it defaults to using the Taichi icon. You can fill in a hexadecimal number to customize the icon, supporting both FontAwesome, icon font and `false`.
+The `menu` configuration structure changed in v0.1.0, allowing users to customize icons. When icon is empty, it defaults to using the Taichi icon. You can fill in a hexadecimal number to customize the icon, supporting both Font Awesome, icon font and `false`.
 
 v0.10.2 icon supports image path, such as `/avatar/avatar.webp`.
 
@@ -1433,7 +1463,7 @@ preloader:
 
 ##### Anchor Icon
 
-v0.1.0 added `anchor_icon` configuration for customizing anchor icons. Default uses the `#` icon. You can fill in a hexadecimal number to customize the icon, supporting both FontAwesome and icon font.
+v0.1.0 added `anchor_icon` configuration for customizing anchor icons. Default uses the `#` icon. You can fill in a hexadecimal number to customize the icon, supporting both Font Awesome and icon font.
 
 ```yaml
 anchor_icon: # Default uses # icon when empty
@@ -1489,7 +1519,7 @@ layout:
 <details>
 <summary>Vendor</summary>
 
-`vendor` is used to store third-party resources such as FontAwesome, Iconfont, katex, mathjax, etc.
+`vendor` is used to store third-party resources such as Font Awesome, Iconfont, katex, mathjax, etc.
 
 The `vendor` structure in hugo-theme-reimu is very flexible and supports the following formats:
 
@@ -1555,10 +1585,6 @@ Both formats are supported. It's recommended to use SRI verification for externa
 ## Contributors
 
 [![](https://contributors-img.web.app/image?repo=D-Sketon/hugo-theme-reimu)](https://github.com/D-Sketon/hugo-theme-reimu/graphs/contributors)
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=D-Sketon/hugo-theme-reimu&type=date&legend=top-left)](https://www.star-history.com/#D-Sketon/hugo-theme-reimu&type=date&legend=top-left)
 
 ## License
 

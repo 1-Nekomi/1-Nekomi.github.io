@@ -1,3 +1,75 @@
+## 0.16.1
+
+**2026-08-02**
+
+### 修复
+
+- 修复主题切换逻辑，确保在非暗黑模式下正确移除 `data-theme` 属性
+- 修复 Giscus 评论 `data-mapping` 误绑定 `strict` 配置的问题，现在正确使用 `mapping` 配置
+- 修复 KaTeX 带 `\tag` 的公式在窄屏下与左侧公式重叠的问题，现在会自动判断并切换到可滚动布局
+
+### 特性
+
+- 新增 spoiler（剧透/遮罩）短代码，支持亮色与暗黑模式，可遮罩文本、图片与 Emoji
+  ```markdown
+  {{</* spoiler */>}}这是被遮罩的内容{{</* /spoiler */>}}
+  ```
+- 暗黑模式配置重构：`dark_mode.enable` 更名为 `dark_mode.type`（兼容旧格式），新增 `dark_mode.button` 控制是否显示手动切换按钮
+  ```yaml
+  dark_mode:
+    type: auto  # true | false | auto
+    button: true  # true | false
+  ```
+- 朋友链接新增 `shuffle` 配置项，支持随机打乱列表顺序
+  ```yaml
+  friends:
+    shuffle: false  # whether to shuffle the friend links
+  ```
+- friendsLink 友链卡片新增展示风格选项，支持 `standard`（默认）、`compact`（紧凑）、`detailed`（详细），并支持徽章与备注字段
+  ```markdown
+  {{</* friendsLink compact */>}}
+  {{</* friendsLink detailed */>}}
+  ```
+
+### 重构
+
+- 更新 `mermaid` 至 v11.16.0、`meting` 至 v2.0.2、`@fortawesome/fontawesome-free` 至 v7.3.1、`@reimujs/aos` 至 v0.1.3、`katex` 至 v0.16.47
+
+---
+
+### Fixes
+
+- Fixed theme switching logic to properly remove the `data-theme` attribute in non-dark mode
+- Fixed the Giscus `data-mapping` being incorrectly bound to the `strict` config; it now correctly uses the `mapping` config
+- Fixed the KaTeX `\tag` formula overlapping the left formula on narrow screens; now it auto-detects and switches to a scrollable layout
+
+### Features
+
+- Added spoiler shortcode with light/dark mode support, can mask text, images, and Emoji
+  ```markdown
+  {{</* spoiler */>}}This is the masked content{{</* /spoiler */>}}
+  ```
+- Refactored dark mode configuration: renamed `dark_mode.enable` to `dark_mode.type` (backward compatible), added `dark_mode.button` to control the toggle button visibility
+  ```yaml
+  dark_mode:
+    type: auto  # true | false | auto
+    button: true  # true | false
+  ```
+- Added `shuffle` config option to friend links to randomize display order
+  ```yaml
+  friends:
+    shuffle: false  # whether to shuffle the friend links
+  ```
+- Added display style options to the friendsLink friend card, supporting `standard` (default), `compact`, and `detailed`, along with badge and remark fields
+  ```markdown
+  {{</* friendsLink compact */>}}
+  {{</* friendsLink detailed */>}}
+  ```
+
+### Refactor
+
+- Updated `mermaid` to v11.16.0, `meting` to v2.0.2, `@fortawesome/fontawesome-free` to v7.3.1, `@reimujs/aos` to v0.1.3、`katex` to v0.16.47
+
 ## 0.16.0
 
 **2026-05-16**
