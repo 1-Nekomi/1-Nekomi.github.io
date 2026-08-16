@@ -444,13 +444,13 @@ twikoo:
 
 # https://github.com/gitalk/gitalk/blob/master/readme-cn.md
 gitalk:
-  enable: false
-  clientID:
-  clientSecret:
-  repo:
-  owner:
-  admin:
-  md5: false
+  enable: true
+  clientID: Ov23limemrUSbz5Hfwjq
+  clientSecret: 2582ece5972612da640d287a6f004a36d4e7aab5
+  repo: MyBlog-Comment-record
+  owner: 1-Nekomi
+  admin: 1-Nekomi
+  md5: true
 
 # https://giscus.app/zh-CN
 giscus:
