@@ -1,3 +1,4 @@
 public/
 /content/post/main.md
 /resources
+.env

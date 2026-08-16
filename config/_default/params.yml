@@ -500,10 +500,10 @@ beaudar:
 ########################################
 
 algolia_search:
-  enable: false
-  appID:
-  apiKey:
-  indexName:
+  enable: true
+  appID: PKAJQF3T5Q
+  apiKey: 9cdbf9920f3655a444dddc917a5f9d11
+  indexName: posts
   hits:
     per_page: 10
 
