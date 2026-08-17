@@ -42,7 +42,7 @@ $ cd Git-Study
 $ git init
 ~~~
 
-​    通过这个操作，该目录会成为一个git仓库，目录中会多出来一个名为**.git**的文件夹（用于跟踪管理仓库，默认隐藏），说明本地仓库初始化成功了。
+​    通过这个操作，该目录会成为一个git仓库，目录中会多出来一个名为 **.git** 的文件夹（用于跟踪管理仓库，默认隐藏），说明本地仓库初始化成功了。
 
 ---
 
@@ -412,7 +412,7 @@ $ git remote add origin git@github.com:1-Nekomi/Git-Study.git
 
 ​    添加后远程库名字就是`origin`，这是git的默认叫法，也可以改成其他名字。
 
-​    使用命令`git push`可以进行**推送(push)**操作：
+​    使用命令`git push`可以进行 **推送(push)** 操作：
 
 ~~~bash
 $ git push -u origin main
@@ -825,7 +825,7 @@ $ git cherry-pick <main-commit_id>
 本部分核心代码：
 
 ~~~bash
-git stash [ < pop | list | apply [stash@{<number>}] | drop > ]
+git stash [ < pop | list | < apply | drop> [stash@{<number>}] ]
 git cherry-pick <commit_id>
 ~~~
 
