@@ -1,9 +1,9 @@
 ---
-title: if语句
+title: python中的if语句
 description: 介绍了python中的if语句，配合一些简单的例子进行说明
 
 date: 2026-08-20T22:12:50+08:00
-lastmod: 2026-08-20T22:12:50+08:00
+lastmod: 2026-08-23T21:15:40+08:00
 tags:
  - python
  - if语句
