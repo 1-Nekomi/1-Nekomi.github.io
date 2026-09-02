@@ -133,7 +133,7 @@ footer:
 # Sidebar
 # sidebar: right # deprecated, use sidebar.position instead
 sidebar:
-  position: right
+  position: left
   menu: true  # whether to show the sidebar menu button, ignored on mobile devices
   article:
     show_common: true # whether to show common sidebar, ignored on mobile devices
@@ -722,30 +722,30 @@ pace:
 # Experimental
 # Please turn on pjax to use this feature
 player:
-  disable_on_mobile: false
+  disable_on_mobile: true
   position: before_sidebar # before_sidebar | after_sidebar | after_widget
   # if you enable meting, you must enable aplayer first
   aplayer:
     # https://github.com/DIYgod/APlayer
-    enable: false
+    enable: true
     options:
       audio: []
-      fixed: true
-      autoplay:
-      loop:
-      order:
-      preload:
-      volume:
-      mutex:
-      listFolded:
-      lrcType:
+      fixed: false
+      autoplay: false
+      loop: 'all'
+      order: 'random'
+      preload: 'auto'
+      volume: 0.5
+      mutex: true
+      listFolded: true
+      lrcType: 0
   meting:
     # https://github.com/metowolf/MetingJS
     # if you want to use meting, please enable aplayer first
-    enable: false
-    meting_api: # custom api
+    enable: true
+    meting_api: https://meting-lake.vercel.app/api?server=netease&type=playlist&id=18346603734 # custom api
     options:
-      id: 2265921590
+      id: 18346603734
       server: netease
       type: playlist
       auto:
