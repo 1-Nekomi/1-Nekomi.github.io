@@ -230,6 +230,30 @@ HelloWorld User!
 | `tolower(c)`  |  当字符为 **大写字母** 时输出其对应的小写字母，否则输出原样  |
 | `toupper(c)`  |  当字符为 **小写字母** 时输出其对应的小写字母，否则输出原样  |
 
+## 与C语言的接口
+
+​    如果需要将`string`对象转换为C语言中的`const char*`类型，则可以使用方法`c_str()`，同时可以使用字符数组类型来给`string`对象进行初始化，例如：
+~~~c++
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main(){
+    const char *temp = "Hello World";
+    string s(temp);
+    const char* cs = s.c_str();
+    
+    printf("%s",cs);
+    
+    return 0;
+}
+~~~
+
+运行结果如下：
+~~~bash
+Hello World
+~~~
+
 ---
 
 ​    string标准库是C++中的一大利器，在处理字符串相关的问题时十分方便快捷。基本算是C++常用标准库之一，因此这里不将其归类于《C++标准库》部分。
