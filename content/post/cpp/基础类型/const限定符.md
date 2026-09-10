@@ -220,13 +220,40 @@ constexpr int dat = da + 2;
 constexpr int data = size(); //当size()函数为constexpr函数时才是正确的声明语句。
 ~~~
 
-关于 **constexpr函数** 在后续会介绍到，这里先按下不表。
-
 而想要把变量声明为constexpr变量，则需要保证变量的数据类型是 **字面值类型** ，也就是比较简单，值也显而易见的数据类型。例如算术类型、引用和指针就属于字面值类型，而类、IO库、string类型就不属于字面值类型，也无法被声明为constexpr变量。
 
 > [!WARNING]
 >
 > 尽管指针和引用可以声明为constexpr变量，但初始值受到了严格限制，例如一个constexpr指针的初始值只能是 **nullptr、0、存储在某个固定地址的对象** 。
+
+### constexpr函数
+
+​    **constexpr函数** 是指能用于常量表达式的函数，定义形式与其他函数基本没有太大区别，但需要遵循下面的约定：
+
+- 函数返回类型和所有形参类型都得是字面量类型
+- 函数体中必须要有且只有一条return语句（可以包含空语句、类型别名、using声明）
+
+例如：
+~~~c++
+constexpr int new_sz(){return 42;}
+constexpr int foo = new_sz();
+~~~
+
+执行上述语句时，编译器会把对constexpr函数的调用替换为其结果值，且constexpr函数会被隐式指定为内联函数。
+
+当然如果constexpr函数想要返回一个非常量，也是被允许的，但前提是传递的参数必须是常量表达式，例如：
+~~~c++
+constexpr size_t scale(size_t cnt) {return new_sz() * cnt}
+~~~
+
+在这种情况下，当且仅当传递的参数`cnt`是常量表达式时才算是合法的constexpr函数，例如下面是调用上面`scale`函数的一些例子：
+~~~c++
+int arr[scale(10)]; //true
+
+//false
+int i = 10; //不是常量表达式
+int a2[scale(i)];
+~~~
 
 ---
 
