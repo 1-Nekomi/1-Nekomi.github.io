@@ -3,7 +3,7 @@ title: C++类概述
 description: 简单说明了C++中的类相关概念，配合了一些简单的例子进行说明
 
 date: 2026-09-14T18:29:26+08:00
-lastmod: 2026-09-14T18:29:26+08:00
+lastmod: 2026-09-16T17:27:19+08:00
 tags:
  - C++
  - 类
@@ -119,6 +119,68 @@ Test(const int& a,const int& b):a(a),b(b) { }
 ~~~c++
 class_name( ... ) : mem_var(expr),... { ... }
 ~~~
+
+### 委托构造函数
+
+​    构造函数也是允许重载的，当重载了构造函数后，就可以委托其他构造函数来帮助初始化，不需要再重新编写一套初始化代码，例如：
+~~~c++
+class Test{
+public:
+    int a,b,c;
+    Test(const int a,const int b,const int c):a(a),b(b),c(c) {}
+    Test(const int a,const int b):Test(a,b,0) {}
+    Test(const int a):Test(a,0) {}
+    Test():Test(0) {}
+    
+};
+~~~
+
+其中只有第一个构造函数Test是自己进行初始化，剩下三个重载的构造函数都是委托了第一个Test构造函数来帮助自己进行初始化。同样的，委托构造函数也可以委托“委托构造函数”来帮助自己进行初始化，不一定要委托具有自行初始化能力的构造函数，例如上述第三个Test构造函数就委托了第二个Test构造函数来帮助自己进行初始化。
+
+当委托构造函数将初始化工作交给对应的构造函数后，会先执行对应构造函数的初始化条件以及函数体代码，然后再将执行层层下递，例如：
+~~~c++
+#include<iostream>
+
+using namespace std;
+
+class Test{
+public:
+    int a,b,c;
+    Test(const int a,const int b,const int c):a(a),b(b),c(c) {cout<<"one"<<endl;}
+    Test(const int a,const int b):Test(a,b,0) {cout<<"two"<<endl;}
+    Test(const int a):Test(a,0) {cout<<"three"<<endl;}
+    Test():Test(0) {cout<<"four"<<endl;}
+    
+};
+
+int main(){
+    Test t{};
+
+    cout<<t.a<<endl<<t.b<<endl<<t.c<<endl;
+    
+    return 0;
+}
+~~~
+
+运行结果为：
+~~~bash
+one
+two
+three
+four
+0
+0
+0
+
+~~~
+
+可以看到整体的执行流程应该是:
+
+~~~
+Test(a,b,c) -> Test(a,b) -> Test(a) -> Test()
+~~~
+
+根据上述的运行结果可以尝试自行推理程序整体的运行顺序。
 
 ## 拷贝、赋值、析构
 
