@@ -377,7 +377,7 @@ Error!
 
 ## unique_ptr
 
-于`shared_ptr`不同的是，`unique_ptr`是独占其指向的对象，并且也没有类似于`make_shared`这样的标准库函数，因此定义一个`unique_ptr`指针的时候需要绑定到一个`new`返回的指针上，不支持普通的拷贝和赋值操作。如下所示：
+于`shared_ptr`不同的是，`unique_ptr`是独占其指向的对象，并且C++11也没有类似于`make_shared`这样的标准库函数（但C++14起，可以使用`make_unique`函数来创建`unique_ptr`类型指针，使用方式请参考`make_shared`函数），因此定义一个`unique_ptr`指针的时候需要绑定到一个`new`返回的指针上，不支持普通的拷贝和赋值操作。如下所示：
 ~~~cpp
 unique_ptr<int> p(new int(1024));
 ~~~
