@@ -352,6 +352,7 @@ struct Pos{
     Pos(int x,int y):x(x),y(y){std::cout << "Pos(" << x << "," << y << ")" << std::endl;}
     bool deletePos(){
         std::cout << "Delete the Pos(" << x << "," << y << ")" << std::endl;
+        //释放其他资源
         return true;
     }
 };
@@ -361,7 +362,7 @@ int main(){
         std::shared_ptr<Pos> q(new Pos(1024,1111));
         throw std::runtime_error("Error!");
         q->deletePos();
-    }catch(std::runtime_error err){
+    }catch(std::runtime_error &err){
         std::cout << err.what() << std::endl;
     }
 
@@ -374,6 +375,44 @@ int main(){
 Pos(1024,1111)
 Error!
 ~~~
+
+通过上面的例子我们可以注意到`q->deletePos()`语句并没有被执行，假设该函数中存在一些释放其他资源的步骤，那么就会导致除了特定的对象，其他资源无法正常释放进而造成内存泄漏等问题。对于这个问题，我们可以给智能指针提供我们自己的函数或者其他可调用对象来替换上述操作，例如：
+~~~cpp
+#include<iostream>
+#include<memory>
+
+struct Pos{
+    int x = 0;
+    int y = 0;
+    Pos(int x,int y):x(x),y(y){std::cout << "Pos(" << x << "," << y << ")" << std::endl;}
+    static bool deletePos(Pos* p){ //接收一个对应对象类型的裸指针
+        std::cout << "Delete the Pos(" << p->x << "," << p->y << ")" << std::endl;
+        //释放其他资源
+        delete p; //该语句较为重要，不能忽略，否则会造成内存泄漏
+        return true;
+    }
+};
+
+int main(){
+    try{
+        std::shared_ptr<Pos> q(new Pos(1024,1111),Pos::deletePos);
+        throw std::runtime_error("Error!");
+    }catch(std::runtime_error &err){
+        std::cout << err.what() << std::endl;
+    }
+
+    return 0;
+}
+~~~
+
+运行结果如下：
+~~~txt
+Pos(1024,1111)
+Delete the Pos(1024,1111)
+Error!
+~~~
+
+可以看到最终函数`deletePos`是会在智能指针p生命周期结束时自动调用的。需要注意的是，假设需要替换掉`delete`关键字，那么提供的可调用对象中一定要接收一个对应对象类型的裸指针，并最后使用`delete`关键字释放掉它，否则会造成内存泄漏。
 
 ## unique_ptr
 
