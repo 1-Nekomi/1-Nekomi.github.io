@@ -2,3 +2,5 @@ public/
 /content/post/main.md
 /resources
 .env
+upload.bat
+upload.sh
