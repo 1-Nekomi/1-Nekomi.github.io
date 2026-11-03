@@ -4,3 +4,4 @@ public/
 .env
 upload.bat
 upload.sh
+.hugo_build.lock
