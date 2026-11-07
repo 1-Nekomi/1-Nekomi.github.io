@@ -1,16 +1,17 @@
 ---
 title: git的使用
-description: 主要介绍版本控制工具git的一些简单概念以及常用的命令
+description: 
 
-date: 2026-08-07T21:37:00+08:00
-lastmod: 2026-08-07T21:37:00+08:00
+date: 2026-08-07T21:24:12+08:00
+lastmod: 2026-11-07T16:06:46+08:00
 tags:
  - git
  - 工具
+ - 杂谈
 categories:
  - 杂谈
-math: true
-mermaid: true
+math: false
+mermaid: false
 weight: 1000000000
 ---
 
